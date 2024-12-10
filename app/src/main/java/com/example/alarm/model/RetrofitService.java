@@ -63,7 +63,7 @@ public class RetrofitService implements RetrofitRepository {
                 } catch (BackendException e) {
                     if(e.getCode() == 404) {
                         throw new AlarmNotFoundException(e);
-                    } else if(e.getCode() == 409) {
+                    } else if(e.getCode() == 400) {
                         throw new AlarmAlreadyExistsException(e);
                     } else {
                         throw e;
@@ -88,8 +88,6 @@ public class RetrofitService implements RetrofitRepository {
                 } catch (BackendException e) {
                     if(e.getCode() == 404) {
                         throw new AlarmNotFoundException(e);
-                    } else if(e.getCode() == 409) {
-                        throw new AlarmAlreadyExistsException(e);
                     } else {
                         throw e;
                     }
@@ -113,7 +111,7 @@ public class RetrofitService implements RetrofitRepository {
                 } catch (BackendException e) {
                     if(e.getCode() == 404) {
                         throw new AlarmNotFoundException(e);
-                    } else if(e.getCode() == 409) {
+                    } else if(e.getCode() == 400) {
                         throw new AlarmAlreadyExistsException(e);
                     } else {
                         throw e;
